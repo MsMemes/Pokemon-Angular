@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Pokemon } from '../models/pokemon';
+import { PokedexService } from '../services/pokedex.service';
 
 @Component({
   selector: 'app-pokemon-view',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonViewComponent implements OnInit {
 
-  constructor() { }
+  pokemons!: Observable<Pokemon[]>;
+
+  constructor(private pokedexService: PokedexService) { }
 
   ngOnInit(): void {
+    this.pokemons = this.pokedexService.pokemons;
+    this.pokedexService.getInitialsPoke();
+    console.log(this.pokemons);
   }
 
 }

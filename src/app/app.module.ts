@@ -9,6 +9,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PokemonViewComponent } from './pokemon-view/pokemon-view.component';
 
@@ -27,7 +28,8 @@ import { PokemonViewComponent } from './pokemon-view/pokemon-view.component';
     FlexLayoutModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

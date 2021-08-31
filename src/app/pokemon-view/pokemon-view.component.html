@@ -1,7 +1,15 @@
+<form class="example-form">
+  <mat-form-field class="example-input" appearance="fill">
+    <mat-label>Search Pokemon</mat-label>
+    <input matInput placeholder="Ex. Charizard">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</form>
+
 <div class="flex-container">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
-    <div>
-      <app-pokemon-card></app-pokemon-card>
+    <div *ngFor="let pokemon of pokemons | async">
+      <app-pokemon-card [poke]="pokemon"></app-pokemon-card>
     </div>
   </div>
 </div>
