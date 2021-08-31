@@ -1,0 +1,20 @@
+<div class="flex-container">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div>
+      <mat-card class="mat-elevation-z8">
+        <mat-card-header>
+          <mat-card-title>{{poke.name}}</mat-card-title>
+          <mat-card-subtitle>Pokedex: {{poke.id}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src={{poke.url}}>
+        <mat-card-actions>
+          <div class="example-button-row">
+            <button mat-raised-button>Shiny</button>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>
+
+
