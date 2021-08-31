@@ -11,6 +11,7 @@ import { PokedexService } from '../services/pokedex.service';
 export class PokemonViewComponent implements OnInit {
 
   pokemons!: Observable<Pokemon[]>;
+  name!: string;
 
   constructor(private pokedexService: PokedexService) { }
 
@@ -18,6 +19,13 @@ export class PokemonViewComponent implements OnInit {
     this.pokemons = this.pokedexService.pokemons;
     this.pokedexService.getInitialsPoke();
     console.log(this.pokemons);
+  }
+
+  getPokemon(){
+    this.pokemons = this.pokedexService.pokemons;
+    this.pokedexService.getPokeByName(this.name);
+    console.log('hi');
+    console.log(this.name);
   }
 
 }
