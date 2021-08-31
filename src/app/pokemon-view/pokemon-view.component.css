@@ -1,0 +1,7 @@
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 16px;
+  justify-content: space-around;
+  margin: 5px;
+}
