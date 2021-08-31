@@ -9,7 +9,7 @@ import { Pokemon } from '../models/pokemon';
 export class PokedexService {
 
   private _pokemon: BehaviorSubject<Pokemon[]>;
-  poke: Pokemon = new Pokemon;
+  poke!: Pokemon;
   chari: Pokemon = new Pokemon;
   bulba: Pokemon = new Pokemon;
   squirtle: Pokemon = new Pokemon;
@@ -29,6 +29,7 @@ export class PokedexService {
 
   getPokeByName(name: string) {
     const pokeUrl =  "https://pokeapi.co/api/v2/pokemon/" + name;
+    this.poke = new Pokemon;
 
     return this.http.get<any>(pokeUrl)
     .subscribe(data => {
@@ -38,6 +39,7 @@ export class PokedexService {
       this.poke.shinyUrl = data.sprites.front_shiny;
       this._pokemon.next(Object.assign({}, this.dataStore).pokemons);
       this.dataStore.pokemons.push(this.poke);
+      console.log(this.dataStore.pokemons)
     }, error => {
       console.log('Failed to fetch pokemons');
     });
